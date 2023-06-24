@@ -4,7 +4,7 @@
 
 This is my portfolio! Here you will see a little more about me and my projects. The project was inspired by [Matheus Battisti's](https://github.com/matheusbattisti/react_sass) React and Sass class, but with some modifications to my liking
 
-To view the website live, [click here](http://google.com/)
+To view the website live, [click here](https://weversonl.com/)
 
 ## Technologies used
 
