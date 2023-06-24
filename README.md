@@ -39,6 +39,21 @@ To view the website live, [click here](http://google.com/)
 
         http://localhost:3000/
 
+### Running the application with docker run
+
+1. Clone the repository or download the source code
+
+        git clone https://github.com/WeversonL/portfolio.git
+        cd portfolio
+
+2. Start with docker run command
+
+        docker run --name portfolio -p 3000:3000 weversonlemos/portfolio:latest
+
+3. Open your browser and type in the URL bar
+
+        http://localhost:3000/
+
 ### Run using npm
 
 Make sure you have Nodejs and NPM installed on your machine.
