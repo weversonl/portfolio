@@ -18,7 +18,7 @@ const technologies = [
   { id: "docker", name: "Docker", icon: <SiDocker />, description: "Utilizei Docker para aprimorar ambientes de CI/CD e garantir melhor qualidade no desenvolvimento" },
   { id: "linux", name: "Linux", icon: <DiLinux />, description: "Linux é meu sistema operacional principal e estudo constantemente para aprimorar meus conhecimentos nele" },
   { id: "psql", name: "PostgreSQL", icon: <SiPostgresql />, description: "Utilizei amplamente o PostgreSQL como uma opção SQL em muitos dos projetos que desenvolvi" },
-  { id: "mongo", name: "MongoDB", icon: <SiMongodb />, description: "Em outros projetos, optei por bancos de dados NoSQL, como o MongoDB, para atender às necessidades específicas" },
+  { id: "mongo", name: "MongoDB", icon: <SiMongodb />, description: "Em outros projetos, optei por bancos de dados NoSQL, como o MongoDB, para atender às necessidades específicas" }
 ];
 
 const TechnologiesContainer = () => {

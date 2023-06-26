@@ -6,7 +6,7 @@ import "../styles/components/socialnetworkcontainer.sass";
 const socialNetworks = [
   { name: "linkedin", icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/weversonlemos/" },
   { name: "github", icon: <FaGithub />, url: "https://github.com/WeversonL" },
-  { name: "whatsapp", icon: <BsWhatsapp />, url: "https://wa.me/5511998634141" },
+  { name: "whatsapp", icon: <BsWhatsapp />, url: "https://wa.me/5511998634141" }
 ];
 
 
