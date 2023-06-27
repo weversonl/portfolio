@@ -11,6 +11,18 @@
     width: 80%
     border-radius: variables.$card-border-radius
 
+    @media screen and (max-width: 1435px)
+        font-size: .8rem
+
+    @media screen and (max-width: 1225px)
+        font-size: .7rem
+
+    @media screen and (max-width: 700px)
+        font-size: 1rem
+
+    @media screen and (max-width: 490px)
+        font-size: .7rem
+
     .info-card
         @include mixins.center
         justify-content: start
@@ -38,10 +50,11 @@
 
         #phone-icon
             color: #e93b81
+            @media screen and (max-width: 1225px)
+                max-width: 20%
 
         #pin-icon
             color: #6ab5b9
 
         #email-icon
             color: #c17ceb
-
