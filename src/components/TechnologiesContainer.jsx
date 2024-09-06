@@ -13,12 +13,12 @@ import {
 import "../styles/components/technologiescontainer.sass";
 
 const technologies = [
-  { id: "java", name: "Java", icon: <DiJava className="icon-tech" />, description: "Desenvolvo em Java há 2 anos. Experiência sólida no desenvolvimento de API's" },
-  { id: "spring", name: "SpringBoot", icon: <SiSpring className="icon-tech" />, description: "Utilizo SpringBoot a pelo menos 2 anos, para desenvolvimento de REST e GraphQL API's" },
-  { id: "docker", name: "Docker", icon: <SiDocker className="icon-tech" />, description: "Utilizei Docker para aprimorar ambientes de CI/CD e garantir melhor qualidade no desenvolvimento" },
-  { id: "linux", name: "Linux", icon: <DiLinux className="icon-tech" />, description: "Linux é meu sistema operacional principal e estudo constantemente para aprimorar meus conhecimentos nele" },
-  { id: "psql", name: "PostgreSQL", icon: <SiPostgresql className="icon-tech" />, description: "Utilizei amplamente o PostgreSQL como uma opção SQL em muitos dos projetos que desenvolvi" },
-  { id: "mongo", name: "MongoDB", icon: <SiMongodb className="icon-tech" />, description: "Em outros projetos, optei por bancos de dados NoSQL, como o MongoDB, para atender às necessidades específicas" }
+  { id: "java", name: "Java", icon: <DiJava className="icon-tech" />, description: "Desenvolvo em Java há 3 anos. Experiência sólida no desenvolvimento de API's" },
+  { id: "spring", name: "SpringBoot", icon: <SiSpring className="icon-tech" />, description: "Utilizo SpringBoot a 3 anos, para desenvolvimento de REST e GraphQL API's" },
+  { id: "docker", name: "Docker", icon: <SiDocker className="icon-tech" />, description: "Utilizo Docker para ambientes de CI/CD para uma melhor qualidade no desenvolvimento" },
+  { id: "linux", name: "Linux", icon: <DiLinux className="icon-tech" />, description: "Linux é meu sistema operacional principal e estou sempre me aprimorando" },
+  { id: "psql", name: "PostgreSQL", icon: <SiPostgresql className="icon-tech" />, description: "Utilizo o PostgreSQL como uma opção SQL, mas conheço diversas opções SQL" },
+  { id: "mongo", name: "MongoDB", icon: <SiMongodb className="icon-tech" />, description: "Bancos NoSQL, o que mais utilizei foi MongoDB. Mas também utilizo outras opções NoSQL" }
 ];
 
 const TechnologiesContainer = () => {

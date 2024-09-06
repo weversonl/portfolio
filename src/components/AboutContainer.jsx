@@ -3,10 +3,10 @@ const AboutContainer = () => {
     <section className="about-container">
       <h2>Sobre</h2>
       <p>
-        Sou um desenvolvedor Java com 2 anos de experiência, apaixonado por aprender e encontrar soluções inovadoras. Desde a infância, a tecnologia sempre fez parte da minha vida, solucionando bugs no Windows e otimizando meu hardware modesto. Com a transição para o Linux, criei scripts de automação e soluções personalizadas para facilitar meu dia a dia. Agora, dedico-me ao desenvolvimento de software, sempre buscando soluções eficazes através de estudos contínuos.
+        Sou um desenvolvedor Java com três anos de experiência e uma verdadeira paixão por aprender e inovar. Desde a infância, a tecnologia sempre foi uma constante na minha vida, começando com a resolução de problemas no Windows e a otimização do meu hardware modesto. Com a transição para o Linux, mergulhei na criação de scripts de automação e soluções personalizadas, aprimorando minha eficiência diária. Hoje, minha dedicação ao desenvolvimento de software reflete meu compromisso em encontrar soluções criativas e eficazes através de estudos contínuos e inovação.
       </p>
       <p>
-        Com dois anos de experiência no desenvolvimento Java, tenho um conhecimento sólido na linguagem e nas melhores práticas de programação. Minha paixão pela área me motiva a permanecer atualizado com as tendências e tecnologias emergentes, explorando novos frameworks e colaborando com outros desenvolvedores talentosos. Meu objetivo é criar soluções de software eficientes e de alta qualidade, proporcionando valor aos usuários.
+        Com um sólido conhecimento em Java e uma forte base nas melhores práticas de programação, minha experiência me permite explorar novas tecnologias e frameworks com entusiasmo. Estou sempre em busca das melhores soluções e colaborando com desenvolvedores talentosos para criar soluções de software de alta qualidade que agregam valor real aos usuários. Meu objetivo é continuar evoluindo como profissional e contribuir para o avanço da tecnologia com soluções eficientes e bem elaboradas.
       </p>
     </section>
   );
