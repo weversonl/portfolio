@@ -1,14 +1,18 @@
+import { useLanguage } from "../contexts/LanguageContext";
+
 const AboutContainer = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="w-full px-6 lg:px-12 py-12 lg:py-16 flex justify-center">
       <div className="w-full max-w-4xl">
-        <h2 className="section-title">Sobre</h2>
+        <h2 className="section-title">{t('about.title')}</h2>
         <div className="space-y-4 content-text leading-relaxed">
           <p>
-            Sou um desenvolvedor Java com cinco anos de experiência e uma verdadeira paixão por aprender e inovar. Desde a infância, a tecnologia sempre foi uma constante na minha vida, começando com a resolução de problemas no Windows e a otimização do meu hardware modesto. Com a transição para o Linux, mergulhei na criação de scripts de automação e soluções personalizadas, aprimorando minha eficiência diária. Hoje, minha dedicação ao desenvolvimento de software reflete meu compromisso em encontrar soluções criativas e eficazes através de estudos contínuos e inovação.
+            {t('about.text1')}
           </p>
           <p>
-            Com um sólido conhecimento em Java e uma forte base nas melhores práticas de programação, minha experiência me permite explorar novas tecnologias e frameworks com entusiasmo. Estou sempre em busca das melhores soluções e colaborando com desenvolvedores talentosos para criar soluções de software de alta qualidade que agregam valor real aos usuários. Meu objetivo é continuar evoluindo como profissional e contribuir para o avanço da tecnologia com soluções eficientes e bem elaboradas.
+            {t('about.text2')}
           </p>
         </div>
       </div>

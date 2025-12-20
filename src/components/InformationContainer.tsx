@@ -1,6 +1,9 @@
 import { AiFillPhone, AiOutlineMail, AiFillEnvironment } from "react-icons/ai";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const InformationContainer = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="w-full max-w-xs space-y-3 mb-8">
       <div className="info-card flex gap-3 p-3 rounded-lg border hover:border-slate-400/60 transition-all duration-300">
@@ -8,7 +11,7 @@ const InformationContainer = () => {
           <AiFillPhone />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="info-card-title font-semibold text-xs mb-0.5">Telefone</h3>
+          <h3 className="info-card-title font-semibold text-xs mb-0.5">{t('sidebar.phone')}</h3>
           <p className="info-card-text text-xs break-words">(11) 99863-4141</p>
         </div>
       </div>
@@ -18,7 +21,7 @@ const InformationContainer = () => {
           <AiOutlineMail />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="info-card-title font-semibold text-xs mb-0.5">E-mail</h3>
+          <h3 className="info-card-title font-semibold text-xs mb-0.5">{t('sidebar.email')}</h3>
           <p className="info-card-text text-xs break-all">weversonlemos10@gmail.com</p>
         </div>
       </div>
@@ -28,7 +31,7 @@ const InformationContainer = () => {
           <AiFillEnvironment />
         </div>
         <div className="flex-1 min-w-0">
-          <h3 className="info-card-title font-semibold text-xs mb-0.5">Localização</h3>
+          <h3 className="info-card-title font-semibold text-xs mb-0.5">{t('sidebar.location')}</h3>
           <p className="info-card-text text-xs break-words">São Paulo / SP</p>
         </div>
       </div>

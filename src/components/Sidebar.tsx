@@ -1,13 +1,18 @@
 import SocialNetworkContainer from "./SocialNetworkContainer";
 import InformationContainer from "./InformationContainer";
 import ThemeToggle from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
+import { useLanguage } from "../contexts/LanguageContext";
 
 import Avatar from "../assets/img/eu.png";
 
 const Sidebar = () => {
+  const { t } = useLanguage();
+  
   return (
     <aside className="w-full lg:w-80 p-8 lg:min-h-screen flex flex-col items-center border-b lg:border-b-0 lg:border-r">
-      <div className="w-full flex justify-end mb-4">
+      <div className="w-full flex justify-between items-center mb-4">
+        <LanguageToggle />
         <ThemeToggle />
       </div>
       
@@ -20,7 +25,7 @@ const Sidebar = () => {
         Weverson Lemos
       </h1>
       <p className="font-semibold text-lg mb-10 text-center">
-        Desenvolvedor Backend
+        {t('sidebar.title')}
       </p>
 
       <SocialNetworkContainer />
@@ -32,7 +37,7 @@ const Sidebar = () => {
         rel="noopener noreferrer"
         className="btn mt-auto w-full lg:w-full text-center"
       >
-        Download currículo
+        {t('sidebar.downloadCV')}
       </a>
     </aside>
   );

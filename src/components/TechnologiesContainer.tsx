@@ -10,20 +10,24 @@ import {
   SiMongodb
 } from "react-icons/si"
 
-const technologies = [
-  { id: "java", name: "Java", icon: <DiJava />, description: "Desenvolvo em Java há 5 anos. Experiência sólida no desenvolvimento de API's" },
-  { id: "spring", name: "SpringBoot", icon: <SiSpring />, description: "Utilizo SpringBoot a 5 anos, para desenvolvimento de REST e GraphQL API's" },
-  { id: "docker", name: "Docker", icon: <SiDocker />, description: "Utilizo Docker para ambientes de CI/CD para uma melhor qualidade no desenvolvimento" },
-  { id: "linux", name: "Linux", icon: <DiLinux />, description: "Linux é meu sistema operacional principal e estou sempre me aprimorando" },
-  { id: "psql", name: "PostgreSQL", icon: <SiPostgresql />, description: "Utilizo o PostgreSQL como uma opção SQL, mas conheço diversas opções SQL" },
-  { id: "mongo", name: "MongoDB", icon: <SiMongodb />, description: "Bancos NoSQL, o que mais utilizei foi MongoDB. Mas também utilizo outras opções NoSQL" }
-];
+import { useLanguage } from "../contexts/LanguageContext";
 
 const TechnologiesContainer = () => {
+  const { t } = useLanguage();
+  
+  const technologies = [
+    { id: "java", name: t('tech.java.name'), icon: <DiJava />, description: t('tech.java.desc') },
+    { id: "spring", name: t('tech.spring.name'), icon: <SiSpring />, description: t('tech.spring.desc') },
+    { id: "docker", name: t('tech.docker.name'), icon: <SiDocker />, description: t('tech.docker.desc') },
+    { id: "linux", name: t('tech.linux.name'), icon: <DiLinux />, description: t('tech.linux.desc') },
+    { id: "psql", name: t('tech.psql.name'), icon: <SiPostgresql />, description: t('tech.psql.desc') },
+    { id: "mongo", name: t('tech.mongo.name'), icon: <SiMongodb />, description: t('tech.mongo.desc') }
+  ];
+  
   return (
     <section className="w-full px-6 lg:px-12 py-12 lg:py-16 flex justify-center">
       <div className="w-full max-w-6xl">
-        <h2 className="section-title">Tecnologias</h2>
+        <h2 className="section-title">{t('tech.title')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {technologies.map((tech) => (
             <div 

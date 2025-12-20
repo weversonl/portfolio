@@ -1,10 +1,14 @@
+import { useLanguage } from "../contexts/LanguageContext";
+
 const ProjectsContainer = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="w-full px-6 lg:px-12 py-12 lg:py-16 flex justify-center">
       <div className="w-full max-w-4xl">
-        <h2 className="section-title">Projetos</h2>
+        <h2 className="section-title">{t('projects.title')}</h2>
         <p className="content-text mb-8 leading-relaxed">
-          A seguir, compartilho alguns dos meus projetos pessoais que desenvolvi. A maioria deles é focada no backend, mas em alguns casos, também integrei um frontend para melhorar a experiência de navegação dos usuários.
+          {t('projects.text')}
         </p>
         <a 
           href="https://github.com/WeversonL?tab=repositories" 
@@ -12,7 +16,7 @@ const ProjectsContainer = () => {
           rel="noopener noreferrer"
           className="btn"
         >
-          Ver Projetos
+          {t('projects.button')}
         </a>
       </div>
     </section>
