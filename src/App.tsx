@@ -1,11 +1,9 @@
 import MainContent from "./components/MainContent";
 import Sidebar from "./components/Sidebar";
 
-import "./styles/components/app.sass";
-
 function App() {
   return (
-    <div id="portfolio">
+    <div className="portfolio-container flex flex-col lg:flex-row min-h-screen">
       <Sidebar />
       <MainContent />
     </div>

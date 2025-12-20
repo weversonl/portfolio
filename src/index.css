@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --primary: 280 75% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 75% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 40%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 280 75% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 280 75% 52%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .portfolio-container {
+    @apply min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-900;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300 ease-out cursor-pointer;
+    @apply bg-gradient-to-r from-slate-400 to-slate-500 text-slate-950 font-bold;
+    @apply hover:from-slate-300 hover:to-slate-400 hover:shadow-lg hover:shadow-slate-400/50;
+    @apply active:scale-95;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold mb-8 flex items-center gap-4;
+  }
+
+  .section-title::after {
+    @apply h-1 flex-grow bg-gradient-to-r from-slate-400 to-transparent rounded-full;
+    content: '';
+  }
+}
