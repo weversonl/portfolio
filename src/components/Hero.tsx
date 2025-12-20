@@ -4,7 +4,7 @@ import Avatar from "../assets/img/eu.png";
 
 const Hero = () => {
   const { t } = useLanguage();
-  
+
   return (
     <section className="w-full min-h-[90vh] flex items-center justify-center px-6 py-20">
       <div className="container mx-auto max-w-6xl">
@@ -14,20 +14,22 @@ const Hero = () => {
               Weverson Lemos
             </h1>
             <h2 className="text-2xl lg:text-3xl font-semibold mb-8 text-slate-300">
-              {t('sidebar.title')}
+              {t("sidebar.title")}
             </h2>
-            
+
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center lg:justify-start gap-2">
-                <span className="text-slate-400">{t('sidebar.phone')}:</span>
+                <span className="text-slate-400">{t("sidebar.phone")}:</span>
                 <span className="text-slate-200">(11) 99863-4141</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start gap-2">
-                <span className="text-slate-400">{t('sidebar.email')}:</span>
-                <span className="text-slate-200 break-all">weversonlemos10@gmail.com</span>
+                <span className="text-slate-400">{t("sidebar.email")}:</span>
+                <span className="text-slate-200 break-all">
+                  weversonlemos10@gmail.com
+                </span>
               </div>
               <div className="flex items-center justify-center lg:justify-start gap-2">
-                <span className="text-slate-400">{t('sidebar.location')}:</span>
+                <span className="text-slate-400">{t("sidebar.location")}:</span>
                 <span className="text-slate-200">São Paulo / SP</span>
               </div>
             </div>
@@ -38,7 +40,7 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="btn inline-block"
             >
-              {t('sidebar.downloadCV')}
+              {t("sidebar.downloadCV")}
             </a>
           </div>
 

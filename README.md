@@ -27,6 +27,7 @@ To view the website live, [click here](https://weverson.dev/)
 This portfolio includes comprehensive SEO configuration:
 
 ### Meta Tags
+
 - **Title**: "Weverson Lemos - Desenvolvedor Backend Java | Spring Boot, Docker, PostgreSQL"
 - **Description**: Detailed description with main technologies and experience
 - **Keywords**: weverson lemos, desenvolvedor java, desenvolvedor backend, spring boot, java developer, backend developer
@@ -35,6 +36,7 @@ This portfolio includes comprehensive SEO configuration:
 - **Structured Data (JSON-LD)**: Schema.org Person markup for rich snippets
 
 ### Files
+
 - ✅ `robots.txt` - Search engine crawling instructions
 - ✅ `sitemap.xml` - Site structure for search engines
 - ✅ Canonical URLs
@@ -52,6 +54,7 @@ After deployment, register your site:
 ### Keywords to Index
 
 The site is optimized for these search terms:
+
 - Weverson Lemos
 - Desenvolvedor Java
 - Desenvolvedor Backend
@@ -72,31 +75,31 @@ The site is optimized for these search terms:
 
 ### Running the application with docker-compose
 
-1. Clone the repository or download the source code
+1.  Clone the repository or download the source code
 
         git clone https://github.com/weversonl/portfolio.git
         cd portfolio
 
-2. Start with docker-compose
+2.  Start with docker-compose
 
         docker-compose up -d
 
-3. Open your browser and type in the URL bar
+3.  Open your browser and type in the URL bar
 
         http://localhost:3000/
 
 ### Running the application with docker run
 
-1. Clone the repository or download the source code
+1.  Clone the repository or download the source code
 
         git clone https://github.com/WeversonL/portfolio.git
         cd portfolio
 
-2. Start with docker run command
+2.  Start with docker run command
 
         docker run --name portfolio -p 3000:3000 weversonlemos/portfolio:latest
 
-3. Open your browser and type in the URL bar
+3.  Open your browser and type in the URL bar
 
         http://localhost:3000/
 
@@ -104,20 +107,20 @@ The site is optimized for these search terms:
 
 Make sure you have Nodejs and NPM installed on your machine.
 
-1. Clone the repository or download the source code
+1.  Clone the repository or download the source code
 
         git clone https://github.com/WeversonL/portfolio.git
         cd portfolio
 
-2. Download npm dependencies
+2.  Download npm dependencies
 
         npm install
 
-3. Run the npm project
+3.  Run the npm project
 
         npm run dev
 
-4. Open your browser and type in the URL bar
+4.  Open your browser and type in the URL bar
 
         http://localhost:3000/
 
@@ -126,7 +129,7 @@ Make sure you have Nodejs and NPM installed on your machine.
 ## License
 
 `portfolio` is released under the [GNU General Public License, Version 2](LICENSE)
-    
+
         Copyright (C) 2022 Weverson Lemos
 
         This program is free software; you can redistribute it and/or

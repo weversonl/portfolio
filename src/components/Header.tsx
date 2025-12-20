@@ -12,7 +12,7 @@ const Header = () => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  
+
   const toggleMenu = () => {
     if (isMenuOpen) {
       setIsClosing(true);
@@ -24,7 +24,7 @@ const Header = () => {
       setIsMenuOpen(true);
     }
   };
-  
+
   return (
     <header className="w-full border-b sticky top-0 z-50 backdrop-blur-lg bg-slate-950/80 supports-[backdrop-filter]:bg-slate-950/60">
       <nav className="container mx-auto px-6 py-4">
@@ -37,7 +37,7 @@ const Header = () => {
             />
             <div>
               <h1 className="text-xl font-bold">Weverson Lemos</h1>
-              <p className="text-sm text-slate-400">{t('sidebar.title')}</p>
+              <p className="text-sm text-slate-400">{t("sidebar.title")}</p>
             </div>
           </div>
 
@@ -57,7 +57,11 @@ const Header = () => {
             aria-label="Menu"
           >
             {isMenuOpen ? (
-              <HiX className={`text-2xl hamburger-icon ${isClosing ? 'close' : 'open'}`} />
+              <HiX
+                className={`text-2xl hamburger-icon ${
+                  isClosing ? "close" : "open"
+                }`}
+              />
             ) : (
               <HiMenu className="text-2xl hamburger-icon" />
             )}
@@ -66,7 +70,11 @@ const Header = () => {
 
         {/* Mobile menu */}
         {(isMenuOpen || isClosing) && (
-          <div className={`sm:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col items-center gap-4 ${isClosing ? 'mobile-menu-exit' : 'mobile-menu-enter'}`}>
+          <div
+            className={`sm:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col items-center gap-4 ${
+              isClosing ? "mobile-menu-exit" : "mobile-menu-enter"
+            }`}
+          >
             <div className="flex items-center gap-3">
               <LanguageToggle />
               <ThemeToggle />

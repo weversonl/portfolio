@@ -9,18 +9,26 @@ interface SocialNetwork {
 }
 
 const socialNetworks: SocialNetwork[] = [
-  { name: "LinkedIn", icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/weversonlemos/" },
+  {
+    name: "LinkedIn",
+    icon: <FaLinkedinIn />,
+    url: "https://www.linkedin.com/in/weversonlemos/",
+  },
   { name: "GitHub", icon: <FaGithub />, url: "https://github.com/WeversonL" },
-  { name: "WhatsApp", icon: <BsWhatsapp />, url: "https://wa.me/5511998634141" }
+  {
+    name: "WhatsApp",
+    icon: <BsWhatsapp />,
+    url: "https://wa.me/5511998634141",
+  },
 ];
 
 const SocialNetworkContainer = () => {
   return (
     <div className="flex gap-3">
       {socialNetworks.map((network) => (
-        <a 
+        <a
           key={network.name}
-          href={network.url} 
+          href={network.url}
           target="_blank"
           rel="noopener noreferrer"
           className="social-btn p-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/40 hover:-translate-y-1"
