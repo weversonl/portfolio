@@ -24,6 +24,26 @@
     --radius: 0.5rem;
   }
 
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --primary: 280 75% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 280 75% 52%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 60%;
+    --muted-foreground: 0 0% 20%;
+    --accent: 280 75% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 280 75% 52%;
+  }
+
   * {
     @apply border-border;
   }
@@ -39,11 +59,138 @@
     @apply min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-900;
   }
 
+  .light .portfolio-container {
+    @apply bg-gradient-to-br from-slate-50 via-white to-slate-100;
+  }
+
+  /* Sidebar styles */
+  aside {
+    @apply bg-gradient-to-b from-slate-900 to-black border-slate-800;
+  }
+
+  .light aside {
+    @apply bg-gradient-to-b from-slate-50 to-slate-100 border-slate-300;
+  }
+
+  /* Text colors */
+  aside h1 {
+    @apply text-white;
+  }
+
+  .light aside h1 {
+    @apply text-slate-900;
+  }
+
+  aside p {
+    @apply text-slate-300;
+  }
+
+  .light aside p {
+    @apply text-slate-700;
+  }
+
+  /* Cards - Information Container */
+  .info-card {
+    @apply bg-gradient-to-r from-slate-800/60 to-slate-900/60 border-slate-700/40;
+  }
+
+  .light .info-card {
+    @apply from-slate-200 to-slate-300 border-slate-400;
+  }
+
+  .info-card-icon {
+    @apply text-slate-300;
+  }
+
+  .light .info-card-icon {
+    @apply text-slate-700;
+  }
+
+  .info-card-title {
+    @apply text-slate-100;
+  }
+
+  .light .info-card-title {
+    @apply text-slate-900;
+  }
+
+  .info-card-text {
+    @apply text-slate-400;
+  }
+
+  .light .info-card-text {
+    @apply text-slate-600;
+  }
+
+  /* Social buttons */
+  .social-btn {
+    @apply bg-gradient-to-br from-slate-700 to-slate-800 text-slate-300;
+  }
+
+  .light .social-btn {
+    @apply from-slate-200 to-slate-300 text-slate-700;
+  }
+
+  .social-btn:hover {
+    @apply text-slate-100 from-slate-600 to-slate-700;
+  }
+
+  .light .social-btn:hover {
+    @apply text-slate-900 from-slate-300 to-slate-400;
+  }
+
+  /* Technology cards */
+  .tech-card {
+    @apply bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-slate-700/40;
+  }
+
+  .light .tech-card {
+    @apply from-slate-100 to-slate-200 border-slate-300;
+  }
+
+  .tech-card-icon {
+    @apply text-slate-300;
+  }
+
+  .light .tech-card-icon {
+    @apply text-slate-700;
+  }
+
+  .tech-card-title {
+    @apply text-white;
+  }
+
+  .light .tech-card-title {
+    @apply text-slate-900;
+  }
+
+  .tech-card-text {
+    @apply text-slate-400;
+  }
+
+  .light .tech-card-text {
+    @apply text-slate-600;
+  }
+
+  /* Content text colors */
+  .content-text {
+    @apply text-slate-300;
+  }
+
+  .light .content-text {
+    @apply text-slate-700;
+  }
+
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-300 ease-out cursor-pointer;
     @apply bg-gradient-to-r from-slate-400 to-slate-500 text-slate-950 font-bold;
     @apply hover:from-slate-300 hover:to-slate-400 hover:shadow-lg hover:shadow-slate-400/50;
     @apply active:scale-95;
+  }
+
+  .light .btn {
+    @apply bg-gradient-to-r from-slate-600 to-slate-700 text-white;
+    @apply hover:from-slate-500 hover:to-slate-600 hover:shadow-slate-600/50;
   }
 
   .section-title {
@@ -53,5 +200,9 @@
   .section-title::after {
     @apply h-1 flex-grow bg-gradient-to-r from-slate-400 to-transparent rounded-full;
     content: '';
+  }
+
+  .light .section-title::after {
+    @apply bg-gradient-to-r from-slate-600 to-transparent;
   }
 }

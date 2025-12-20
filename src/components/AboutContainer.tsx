@@ -3,7 +3,7 @@ const AboutContainer = () => {
     <section className="w-full px-6 lg:px-12 py-12 lg:py-16 flex justify-center">
       <div className="w-full max-w-4xl">
         <h2 className="section-title">Sobre</h2>
-        <div className="space-y-4 text-slate-300 leading-relaxed">
+        <div className="space-y-4 content-text leading-relaxed">
           <p>
             Sou um desenvolvedor Java com cinco anos de experiência e uma verdadeira paixão por aprender e inovar. Desde a infância, a tecnologia sempre foi uma constante na minha vida, começando com a resolução de problemas no Windows e a otimização do meu hardware modesto. Com a transição para o Linux, mergulhei na criação de scripts de automação e soluções personalizadas, aprimorando minha eficiência diária. Hoje, minha dedicação ao desenvolvimento de software reflete meu compromisso em encontrar soluções criativas e eficazes através de estudos contínuos e inovação.
           </p>

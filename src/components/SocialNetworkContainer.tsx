@@ -16,7 +16,7 @@ const SocialNetworkContainer = () => {
           target="_blank"
           rel="noopener noreferrer"
           key={network.name}
-          className="p-3 rounded-lg bg-gradient-to-br from-slate-700 to-slate-800 text-slate-300 hover:text-slate-100 hover:from-slate-600 hover:to-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/40 hover:-translate-y-1"
+          className="social-btn p-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/40 hover:-translate-y-1"
           aria-label={network.name}
         >
           <span className="text-xl flex items-center justify-center">

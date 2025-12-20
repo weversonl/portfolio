@@ -28,15 +28,15 @@ const TechnologiesContainer = () => {
           {technologies.map((tech) => (
             <div 
               key={tech.id}
-              className="group p-6 rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/40 hover:border-slate-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/20"
+              className="tech-card group p-6 rounded-xl border hover:border-slate-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/20"
             >
               <div className="flex gap-6">
-                <div className="text-slate-300 text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="tech-card-icon text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                   {tech.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-white font-bold text-lg mb-2">{tech.name}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{tech.description}</p>
+                  <h3 className="tech-card-title font-bold text-lg mb-2">{tech.name}</h3>
+                  <p className="tech-card-text text-sm leading-relaxed">{tech.description}</p>
                 </div>
               </div>
             </div>
