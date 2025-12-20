@@ -195,25 +195,22 @@
 
   /* Language Toggle Button */
   .language-btn {
-    @apply text-3xl p-2 rounded-lg transition-all duration-300;
-    @apply bg-slate-800/40 hover:bg-slate-700/60;
-    @apply opacity-60 hover:opacity-100;
-    @apply border border-slate-700/40 hover:border-slate-500/60;
+    @apply p-2 rounded-lg transition-all duration-300;
+    @apply bg-slate-700 text-slate-300;
+    @apply hover:bg-slate-600 hover:text-slate-100 hover:shadow-lg;
   }
 
   .language-btn.active {
-    @apply opacity-100 bg-slate-700/60 border-slate-500/60;
-    @apply shadow-lg shadow-slate-400/20;
+    @apply bg-slate-600 text-slate-100 shadow-lg;
   }
 
   .light .language-btn {
-    @apply bg-slate-200/60 hover:bg-slate-300/80;
-    @apply border-slate-400/40 hover:border-slate-500/60;
+    @apply bg-slate-300 text-slate-700;
+    @apply hover:bg-slate-400 hover:text-slate-900;
   }
 
   .light .language-btn.active {
-    @apply bg-slate-300/80 border-slate-500/60;
-    @apply shadow-lg shadow-slate-600/20;
+    @apply bg-slate-400 text-slate-900 shadow-lg;
   }
 
   .section-title {
