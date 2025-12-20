@@ -11,8 +11,19 @@ import { LanguageToggle } from "./LanguageToggle";
 const Header = () => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   
-  const toggleMenu = () => setIsMenuOpen(prev => !prev);
+  const toggleMenu = () => {
+    if (isMenuOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsClosing(false);
+      }, 300);
+    } else {
+      setIsMenuOpen(true);
+    }
+  };
   
   return (
     <header className="w-full border-b sticky top-0 z-50 backdrop-blur-lg bg-slate-950/80 supports-[backdrop-filter]:bg-slate-950/60">
@@ -45,13 +56,17 @@ const Header = () => {
             className="sm:hidden p-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-slate-100 transition-all duration-300"
             aria-label="Menu"
           >
-            {isMenuOpen ? <HiX className="text-2xl" /> : <HiMenu className="text-2xl" />}
+            {isMenuOpen ? (
+              <HiX className={`text-2xl hamburger-icon ${isClosing ? 'close' : 'open'}`} />
+            ) : (
+              <HiMenu className="text-2xl hamburger-icon" />
+            )}
           </button>
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="sm:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col items-center gap-4">
+        {(isMenuOpen || isClosing) && (
+          <div className={`sm:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col items-center gap-4 ${isClosing ? 'mobile-menu-exit' : 'mobile-menu-enter'}`}>
             <div className="flex items-center gap-3">
               <LanguageToggle />
               <ThemeToggle />
