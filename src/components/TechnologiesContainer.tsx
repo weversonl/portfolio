@@ -1,14 +1,6 @@
-import {
-  DiJava,
-  DiLinux
-} from "react-icons/di";
-
-import { 
-  SiSpring,
-  SiDocker,
-  SiPostgresql,
-  SiMongodb
-} from "react-icons/si"
+import type { RefObject } from "react";
+import { DiJava, DiLinux } from "react-icons/di";
+import { SiSpring, SiDocker, SiPostgresql, SiMongodb } from "react-icons/si";
 
 import { useLanguage } from "../contexts/LanguageContext";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
@@ -28,7 +20,7 @@ const TechnologiesContainer = () => {
   
   return (
     <section 
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={ref as RefObject<HTMLElement>}
       id="technologies" 
       className={`w-full px-6 py-20 lg:py-32 flex justify-center scroll-animate ${isVisible ? 'visible' : ''}`}
     >

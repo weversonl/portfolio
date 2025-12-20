@@ -1,15 +1,18 @@
-import SocialNetworkContainer from "./SocialNetworkContainer";
-import ThemeToggle from "./ThemeToggle";
-import { LanguageToggle } from "./LanguageToggle";
-import { useLanguage } from "../contexts/LanguageContext";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
+import { useLanguage } from "../contexts/LanguageContext";
 import Avatar from "../assets/img/eu.png";
+
+import SocialNetworkContainer from "./SocialNetworkContainer";
+import ThemeToggle from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 
 const Header = () => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const toggleMenu = () => setIsMenuOpen(prev => !prev);
   
   return (
     <header className="w-full border-b sticky top-0 z-50 backdrop-blur-lg bg-slate-950/80 supports-[backdrop-filter]:bg-slate-950/60">
@@ -38,7 +41,7 @@ const Header = () => {
 
           {/* Mobile hamburger button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={toggleMenu}
             className="sm:hidden p-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-slate-100 transition-all duration-300"
             aria-label="Menu"
           >

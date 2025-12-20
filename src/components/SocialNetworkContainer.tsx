@@ -1,10 +1,17 @@
+import type { ReactNode } from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { BsWhatsapp } from "react-icons/bs"
+import { BsWhatsapp } from "react-icons/bs";
 
-const socialNetworks = [
-  { name: "linkedin", icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/weversonlemos/" },
-  { name: "github", icon: <FaGithub />, url: "https://github.com/WeversonL" },
-  { name: "whatsapp", icon: <BsWhatsapp />, url: "https://wa.me/5511998634141" }
+interface SocialNetwork {
+  name: string;
+  icon: ReactNode;
+  url: string;
+}
+
+const socialNetworks: SocialNetwork[] = [
+  { name: "LinkedIn", icon: <FaLinkedinIn />, url: "https://www.linkedin.com/in/weversonlemos/" },
+  { name: "GitHub", icon: <FaGithub />, url: "https://github.com/WeversonL" },
+  { name: "WhatsApp", icon: <BsWhatsapp />, url: "https://wa.me/5511998634141" }
 ];
 
 const SocialNetworkContainer = () => {
@@ -12,10 +19,10 @@ const SocialNetworkContainer = () => {
     <div className="flex gap-3">
       {socialNetworks.map((network) => (
         <a 
+          key={network.name}
           href={network.url} 
           target="_blank"
           rel="noopener noreferrer"
-          key={network.name}
           className="social-btn p-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/40 hover:-translate-y-1"
           aria-label={network.name}
         >

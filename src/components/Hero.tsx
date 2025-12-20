@@ -1,4 +1,5 @@
 import { useLanguage } from "../contexts/LanguageContext";
+
 import Avatar from "../assets/img/eu.png";
 
 const Hero = () => {
