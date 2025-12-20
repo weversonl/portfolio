@@ -9,22 +9,22 @@ const socialNetworks = [
 
 const SocialNetworkContainer = () => {
   return (
-    <section className="flex gap-4 mb-8 w-full justify-center">
+    <div className="flex gap-3">
       {socialNetworks.map((network) => (
         <a 
           href={network.url} 
           target="_blank"
           rel="noopener noreferrer"
           key={network.name}
-          className="social-btn p-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/40 hover:-translate-y-1"
+          className="social-btn p-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/40 hover:-translate-y-1"
           aria-label={network.name}
         >
-          <span className="text-xl flex items-center justify-center">
+          <span className="text-lg flex items-center justify-center">
             {network.icon}
           </span>
         </a>
       ))}
-    </section>
+    </div>
   );
 };
 

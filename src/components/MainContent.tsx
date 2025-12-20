@@ -1,14 +1,22 @@
 import TechnologiesContainer from "./TechnologiesContainer";
 import AboutContainer from "./AboutContainer";
 import ProjectsContainer from "./ProjectsContainer";
+import Hero from "./Hero";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const MainContent = () => {
   return (
-    <main className="flex-1 overflow-y-auto flex flex-col items-center">
-      <AboutContainer />
-      <TechnologiesContainer />
-      <ProjectsContainer />
-    </main>
+    <div className="w-full">
+      <Header />
+      <main className="w-full">
+        <Hero />
+        <AboutContainer />
+        <TechnologiesContainer />
+        <ProjectsContainer />
+      </main>
+      <Footer />
+    </div>
   );
 };
 

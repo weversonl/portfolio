@@ -51,25 +51,90 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Smooth transitions for all theme changes */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
   }
 }
 
 @layer components {
-  .portfolio-container {
-    @apply min-h-screen bg-gradient-to-br from-slate-950 via-black to-slate-900;
+  /* Landing page background */
+  body {
+    @apply bg-gradient-to-br from-slate-950 via-black to-slate-900;
+    transition: background 0.5s ease;
   }
 
-  .light .portfolio-container {
+  .light body {
     @apply bg-gradient-to-br from-slate-50 via-white to-slate-100;
   }
 
-  /* Sidebar styles */
-  aside {
-    @apply bg-gradient-to-b from-slate-900 to-black border-slate-800;
+  /* Header styles */
+  header {
+    @apply border-slate-800;
   }
 
-  .light aside {
-    @apply bg-gradient-to-b from-slate-50 to-slate-100 border-slate-300;
+  .light header {
+    @apply border-slate-300 bg-slate-50/80 supports-[backdrop-filter]:bg-slate-50/60;
+  }
+
+  header h1 {
+    @apply text-white;
+  }
+
+  .light header h1 {
+    @apply text-slate-900;
+  }
+
+  header p {
+    @apply text-slate-400;
+  }
+
+  .light header p {
+    @apply text-slate-600;
+  }
+
+  /* Mobile menu border */
+  .light header > nav > div:last-child {
+    @apply border-slate-300;
+  }
+
+  /* Hero section */
+  .light section h1 {
+    @apply from-slate-800 to-slate-600;
+  }
+
+  .light section h2 {
+    @apply text-slate-700;
+  }
+
+  /* Hero contact info - Light theme */
+  .light section .text-slate-400 {
+    @apply text-slate-600;
+  }
+
+  .light section .text-slate-200 {
+    @apply text-slate-800;
+  }
+
+  .light section .text-slate-300 {
+    @apply text-slate-700;
+  }
+
+  /* Section backgrounds - Light theme */
+  .light section#about,
+  .light section#projects {
+    background: rgba(241, 245, 249, 0.4);
   }
 
   /* Text colors */
@@ -224,5 +289,28 @@
 
   .light .section-title::after {
     @apply bg-gradient-to-r from-slate-600 to-transparent;
+  }
+
+  /* Scroll Animations */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-animate-fast {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  .scroll-animate-fast.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

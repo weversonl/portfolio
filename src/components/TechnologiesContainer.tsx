@@ -11,9 +11,11 @@ import {
 } from "react-icons/si"
 
 import { useLanguage } from "../contexts/LanguageContext";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const TechnologiesContainer = () => {
   const { t } = useLanguage();
+  const { ref, isVisible } = useScrollAnimation();
   
   const technologies = [
     { id: "java", name: t('tech.java.name'), icon: <DiJava />, description: t('tech.java.desc') },
@@ -25,10 +27,14 @@ const TechnologiesContainer = () => {
   ];
   
   return (
-    <section className="w-full px-6 lg:px-12 py-12 lg:py-16 flex justify-center">
-      <div className="w-full max-w-6xl">
+    <section 
+      ref={ref as React.RefObject<HTMLElement>}
+      id="technologies" 
+      className={`w-full px-6 py-20 lg:py-32 flex justify-center scroll-animate ${isVisible ? 'visible' : ''}`}
+    >
+      <div className="container max-w-6xl">
         <h2 className="section-title">{t('tech.title')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {technologies.map((tech) => (
             <div 
               key={tech.id}

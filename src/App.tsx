@@ -1,5 +1,4 @@
 import MainContent from "./components/MainContent";
-import Sidebar from "./components/Sidebar";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { useEffect } from "react";
@@ -12,12 +11,7 @@ function AppContent() {
     document.documentElement.lang = language === 'pt-BR' ? 'pt-BR' : 'en-US';
   }, [language]);
 
-  return (
-    <div className="portfolio-container flex flex-col lg:flex-row min-h-screen">
-      <Sidebar />
-      <MainContent />
-    </div>
-  );
+  return <MainContent />;
 }
 
 function App() {
