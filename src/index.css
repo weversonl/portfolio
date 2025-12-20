@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Page Load Animation */
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-load-animation {
+  animation: pageLoad 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
 /* Mobile Menu Animations */
 @keyframes slideDownFade {
   from {
