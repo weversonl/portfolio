@@ -83,15 +83,46 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguageState] = useState<Language>('pt-BR');
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'pt-BR' || savedLanguage === 'en-US')) {
-      setLanguageState(savedLanguage);
+    // Detectar idioma da URL
+    const path = window.location.pathname;
+    let detectedLang: Language | null = null;
+
+    if (path.startsWith('/en-us') || path.startsWith('/en')) {
+      detectedLang = 'en-US';
+    } else if (path.startsWith('/pt-br') || path.startsWith('/pt')) {
+      detectedLang = 'pt-BR';
+    }
+
+    // Prioridade: URL > localStorage > default
+    if (detectedLang) {
+      setLanguageState(detectedLang);
+      localStorage.setItem('language', detectedLang);
+    } else {
+      const savedLanguage = localStorage.getItem('language') as Language;
+      if (savedLanguage && (savedLanguage === 'pt-BR' || savedLanguage === 'en-US')) {
+        setLanguageState(savedLanguage);
+      }
     }
   }, []);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
+    
+    // Atualizar URL sem recarregar a página
+    const currentPath = window.location.pathname;
+    let newPath = '/';
+    
+    if (lang === 'en-US') {
+      newPath = '/en-us';
+    } else if (lang === 'pt-BR') {
+      newPath = '/pt-br';
+    }
+    
+    // Só atualiza se a rota mudou
+    if (!currentPath.startsWith(newPath)) {
+      window.history.pushState({}, '', newPath);
+    }
   };
 
   const t = (key: string): string => {
