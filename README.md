@@ -2,16 +2,62 @@
 
 ## About
 
-This is my portfolio! Here you will see a little more about me and my projects. The project was inspired by [Matheus Battisti's](https://github.com/matheusbattisti/react_sass) React and Sass class, but with some modifications to my liking
+This is my portfolio! Here you will see a little more about me and my projects. TypeScript, React, Vite and Tailwind stack.
 
-To view the website live, [click here](https://weversonl.com/)
+To view the website live, [click here](https://weverson.dev/)
 
 ## Technologies used
 
-- React
-- Vite
-- Sass
+- React 18.3.1
+- TypeScript 5.7.2
+- Vite 6.4.1
+- Tailwind CSS 3.4.17
 - Docker
+
+## Features
+
+- 🌓 Dark/Light theme toggle
+- 🌍 i18n support (PT-BR / EN-US)
+- 📱 Fully responsive design
+- 🚀 SEO optimized
+- 🐳 Docker ready for production
+
+## SEO Optimization
+
+This portfolio includes comprehensive SEO configuration:
+
+### Meta Tags
+- **Title**: "Weverson Lemos - Desenvolvedor Backend Java | Spring Boot, Docker, PostgreSQL"
+- **Description**: Detailed description with main technologies and experience
+- **Keywords**: weverson lemos, desenvolvedor java, desenvolvedor backend, spring boot, java developer, backend developer
+- **Open Graph**: Full social media sharing optimization
+- **Twitter Cards**: Twitter-specific metadata
+- **Structured Data (JSON-LD)**: Schema.org Person markup for rich snippets
+
+### Files
+- ✅ `robots.txt` - Search engine crawling instructions
+- ✅ `sitemap.xml` - Site structure for search engines
+- ✅ Canonical URLs
+- ✅ hreflang tags for internationalization
+
+### Google Search Console Setup
+
+After deployment, register your site:
+
+1. Access [Google Search Console](https://search.google.com/search-console)
+2. Add your property: `https://weverson.dev`
+3. Verify ownership (HTML file or DNS record)
+4. Submit sitemap: `https://weverson.dev/sitemap.xml`
+
+### Keywords to Index
+
+The site is optimized for these search terms:
+- Weverson Lemos
+- Desenvolvedor Java
+- Desenvolvedor Backend
+- Spring Boot Developer
+- Java Developer São Paulo
+- Backend Developer Brazil
 
 ## Requirements
 
@@ -28,7 +74,7 @@ To view the website live, [click here](https://weversonl.com/)
 
 1. Clone the repository or download the source code
 
-        git clone https://github.com/WeversonL/portfolio.git
+        git clone https://github.com/weversonl/portfolio.git
         cd portfolio
 
 2. Start with docker-compose

@@ -1,0 +1,9 @@
+# robots.txt - Weverson Lemos Portfolio
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://weverson.dev/sitemap.xml
+
+# Crawl-delay for good practices
+Crawl-delay: 10
