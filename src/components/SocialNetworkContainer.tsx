@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface SocialNetwork {
   name: string;
@@ -8,21 +9,26 @@ interface SocialNetwork {
   url: string;
 }
 
-const socialNetworks: SocialNetwork[] = [
-  {
-    name: "LinkedIn",
-    icon: <FaLinkedinIn />,
-    url: "https://www.linkedin.com/in/weversonlemos/",
-  },
-  { name: "GitHub", icon: <FaGithub />, url: "https://github.com/WeversonL" },
-  {
-    name: "WhatsApp",
-    icon: <BsWhatsapp />,
-    url: "https://wa.me/5511998634141",
-  },
-];
-
 const SocialNetworkContainer = () => {
+  const { language } = useLanguage();
+
+  const linkedinUrl = language === "en-US"
+    ? "https://www.linkedin.com/in/weversonlemos/?locale=en_US"
+    : "https://www.linkedin.com/in/weversonlemos/";
+
+  const socialNetworks: SocialNetwork[] = [
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedinIn />,
+      url: linkedinUrl,
+    },
+    { name: "GitHub", icon: <FaGithub />, url: "https://github.com/WeversonL" },
+    {
+      name: "WhatsApp",
+      icon: <BsWhatsapp />,
+      url: "https://wa.me/5511998634141",
+    },
+  ];
   return (
     <div className="flex gap-3">
       {socialNetworks.map((network) => (

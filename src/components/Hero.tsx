@@ -3,7 +3,11 @@ import { useLanguage } from "../contexts/LanguageContext";
 import Avatar from "../assets/img/eu.png";
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const cvLink = language === "en-US"
+    ? "https://drive.google.com/file/d/10Wpi1Nsq-_2rWbdydXFOrT-Mk8R4xyEE/view?usp=sharing"
+    : "https://drive.google.com/file/d/1m2Ssn-kb88Lh8y6es0fEudiilhfhUVOT/view?usp=sharing";
 
   return (
     <section className="w-full min-h-[90vh] flex items-center justify-center px-6 py-20">
@@ -35,7 +39,7 @@ const Hero = () => {
             </div>
 
             <a
-              href="https://drive.google.com/file/d/1m2Ssn-kb88Lh8y6es0fEudiilhfhUVOT/view?usp=sharing"
+              href={cvLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn inline-block"
