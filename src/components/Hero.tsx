@@ -29,7 +29,7 @@ const Hero = () => {
               <div className="flex items-center justify-center lg:justify-start gap-2">
                 <span className="text-slate-400">{t("sidebar.email")}:</span>
                 <span className="text-slate-200 break-all">
-                  weversonlemos10@gmail.com
+                  {language === "pt-BR" ? "contato@weverson.dev" : "contact@weverson.dev"}
                 </span>
               </div>
               <div className="flex items-center justify-center lg:justify-start gap-2">
