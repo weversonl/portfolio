@@ -26,7 +26,7 @@ const SocialNetworkContainer = () => {
     {
       name: "WhatsApp",
       icon: <BsWhatsapp />,
-      url: "https://wa.me/5511998634141",
+      url: "https://wa.me/5511982011935",
     },
   ];
   return (

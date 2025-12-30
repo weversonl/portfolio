@@ -24,7 +24,7 @@ const Hero = () => {
             <div className="space-y-3 mb-8">
               <div className="flex items-center justify-center lg:justify-start gap-2">
                 <span className="text-slate-400">{t("sidebar.phone")}:</span>
-                <span className="text-slate-200">(11) 99863-4141</span>
+                <span className="text-slate-200">(11) 98201-1935</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start gap-2">
                 <span className="text-slate-400">{t("sidebar.email")}:</span>
