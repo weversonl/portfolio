@@ -22,7 +22,7 @@ const SocialNetworkContainer = () => {
       icon: <FaLinkedinIn />,
       url: linkedinUrl,
     },
-    { name: "GitHub", icon: <FaGithub />, url: "https://github.com/WeversonL" },
+    { name: "GitHub", icon: <FaGithub />, url: "https://github.com/weversonl" },
     {
       name: "WhatsApp",
       icon: <BsWhatsapp />,

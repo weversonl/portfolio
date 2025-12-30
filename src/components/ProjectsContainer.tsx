@@ -19,7 +19,7 @@ const ProjectsContainer = () => {
           {t("projects.text")}
         </p>
         <a
-          href="https://github.com/WeversonL?tab=repositories"
+          href="https://github.com/weversonl"
           target="_blank"
           rel="noopener noreferrer"
           className="btn"

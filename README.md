@@ -92,7 +92,7 @@ The site is optimized for these search terms:
 
 1.  Clone the repository or download the source code
 
-        git clone https://github.com/WeversonL/portfolio.git
+        git clone https://github.com/weversonl/portfolio.git
         cd portfolio
 
 2.  Start with docker run command
@@ -109,7 +109,7 @@ Make sure you have Nodejs and NPM installed on your machine.
 
 1.  Clone the repository or download the source code
 
-        git clone https://github.com/WeversonL/portfolio.git
+        git clone https://github.com/weversonl/portfolio.git
         cd portfolio
 
 2.  Download npm dependencies
