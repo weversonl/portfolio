@@ -88,6 +88,30 @@
   will-change: transform, opacity;
 }
 
+/* Mobile Menu Dropdown - floating glass style */
+.mobile-menu-dropdown {
+  @apply backdrop-blur-xl;
+  background: linear-gradient(135deg,
+    rgba(9, 15, 33, 0.95) 0%,
+    rgba(9, 15, 33, 0.9) 100%);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.light .mobile-menu-dropdown {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.95) 100%);
+  box-shadow:
+    0 12px 40px rgba(51, 65, 85, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
 /* Mobile Menu Animations - GPU accelerated, iOS-style */
 .mobile-menu-enter {
   animation: menuEnter 0.35s cubic-bezier(0.33, 1, 0.68, 1) forwards;
@@ -104,22 +128,22 @@
 @keyframes menuEnter {
   from {
     opacity: 0;
-    transform: translate3d(0, -12px, 0) scaleY(0.92);
+    transform: translate3d(0, -8px, 0) scale(0.96);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scaleY(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
 @keyframes menuExit {
   from {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scaleY(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
   to {
     opacity: 0;
-    transform: translate3d(0, -12px, 0) scaleY(0.92);
+    transform: translate3d(0, -8px, 0) scale(0.96);
   }
 }
 

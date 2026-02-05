@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header className="w-full sticky top-0 z-50">
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-4 relative">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img
@@ -63,10 +63,10 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu - floating overlay */}
         {(isMenuOpen || isClosing) && (
           <div
-            className={`sm:hidden mt-4 pt-4 border-t border-white/10 flex flex-col items-center gap-4 ${
+            className={`sm:hidden absolute left-4 right-4 top-full mt-2 p-4 rounded-2xl mobile-menu-dropdown flex flex-col items-center gap-4 ${
               isClosing ? "mobile-menu-exit" : "mobile-menu-enter"
             }`}
           >
