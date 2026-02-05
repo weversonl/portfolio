@@ -4,7 +4,6 @@ import ProjectsContainer from "./ProjectsContainer";
 import Hero from "./Hero";
 import Header from "./Header";
 import Footer from "./Footer";
-import FloatingMenu from "./FloatingMenu";
 
 const MainContent = () => {
   return (
@@ -25,7 +24,6 @@ const MainContent = () => {
         </div>
       </main>
       <Footer />
-      <FloatingMenu />
     </div>
   );
 };
