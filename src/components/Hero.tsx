@@ -1,9 +1,11 @@
 import { useLanguage } from "../contexts/LanguageContext";
+import { useTheme } from "../contexts/ThemeContext";
 
 import Avatar from "../assets/img/eu.png";
 
 const Hero = () => {
   const { t, language } = useLanguage();
+  const { theme } = useTheme();
 
   const cvLink = language === "en-US"
     ? "https://drive.google.com/file/d/10Wpi1Nsq-_2rWbdydXFOrT-Mk8R4xyEE/view?usp=sharing"
@@ -48,11 +50,21 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 relative">
+            {/* Glow effect behind avatar */}
+            <div
+              className={`absolute inset-0 rounded-full blur-3xl scale-110 transition-colors duration-500 ${
+                theme === "light"
+                  ? "bg-gradient-to-br from-slate-300/40 to-slate-400/30"
+                  : "bg-gradient-to-br from-slate-400/30 to-slate-600/30"
+              }`}
+            />
             <img
               src={Avatar}
               alt="Weverson Lemos"
-              className="w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover ring-8 ring-slate-400 shadow-2xl shadow-slate-400/30"
+              className={`relative w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover avatar-ring ${
+                theme === "light" ? "ring-slate-300/50" : "ring-white/20"
+              }`}
             />
           </div>
         </div>

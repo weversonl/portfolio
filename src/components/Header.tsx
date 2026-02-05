@@ -26,18 +26,18 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full border-b sticky top-0 z-50 backdrop-blur-lg bg-slate-950/80 supports-[backdrop-filter]:bg-slate-950/60">
+    <header className="w-full sticky top-0 z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img
               src={Avatar}
               alt="Weverson Lemos"
-              className="w-12 h-12 rounded-full object-cover ring-2 ring-slate-400"
+              className="w-12 h-12 rounded-full object-cover ring-2 ring-white/20 shadow-lg"
             />
             <div>
               <h1 className="text-xl font-bold">Weverson Lemos</h1>
-              <p className="text-sm text-slate-400">{t("sidebar.title")}</p>
+              <p className="text-sm">{t("sidebar.title")}</p>
             </div>
           </div>
 
@@ -53,7 +53,7 @@ const Header = () => {
           {/* Mobile hamburger button */}
           <button
             onClick={toggleMenu}
-            className="sm:hidden p-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-300 hover:text-slate-100 transition-all duration-300"
+            className="sm:hidden glass-btn p-2"
             aria-label="Menu"
           >
             {isMenuOpen ? (
@@ -71,7 +71,7 @@ const Header = () => {
         {/* Mobile menu */}
         {(isMenuOpen || isClosing) && (
           <div
-            className={`sm:hidden mt-4 pt-4 border-t border-slate-800 flex flex-col items-center gap-4 ${
+            className={`sm:hidden mt-4 pt-4 border-t border-white/10 flex flex-col items-center gap-4 ${
               isClosing ? "mobile-menu-exit" : "mobile-menu-enter"
             }`}
           >

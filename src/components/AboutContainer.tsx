@@ -10,7 +10,7 @@ const AboutContainer = () => {
     <section
       ref={ref as RefObject<HTMLElement>}
       id="about"
-      className={`w-full px-6 py-20 lg:py-32 flex justify-center bg-slate-900/30 light:bg-slate-100/30 scroll-animate ${
+      className={`w-full px-6 py-20 lg:py-32 flex justify-center glass-section scroll-animate ${
         isVisible ? "visible" : ""
       }`}
     >
