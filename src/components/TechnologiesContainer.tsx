@@ -58,11 +58,11 @@ const TechnologiesContainer = () => {
     >
       <div className="container max-w-6xl">
         <h2 className="section-title">{t("tech.title")}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {technologies.map((tech) => (
             <div
               key={tech.id}
-              className="tech-card group p-6 rounded-xl border hover:border-slate-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/20"
+              className="tech-card group"
             >
               <div className="flex gap-6">
                 <div className="tech-card-icon text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">

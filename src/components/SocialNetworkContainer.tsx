@@ -37,7 +37,7 @@ const SocialNetworkContainer = () => {
           href={network.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="social-btn p-2 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/40 hover:-translate-y-1"
+          className="social-btn hover:-translate-y-1"
           aria-label={network.name}
         >
           <span className="text-lg flex items-center justify-center">

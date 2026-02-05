@@ -1,4 +1,5 @@
 import MainContent from "./components/MainContent";
+import FloatingMenu from "./components/FloatingMenu";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { useEffect, useState } from "react";
@@ -20,9 +21,12 @@ function AppContent() {
   }, []);
 
   return (
-    <div className={isLoaded ? "page-load-animation" : "opacity-0"}>
-      <MainContent />
-    </div>
+    <>
+      <div className={isLoaded ? "page-load-animation" : "opacity-0"}>
+        <MainContent />
+      </div>
+      <FloatingMenu />
+    </>
   );
 }
 
