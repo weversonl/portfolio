@@ -42,12 +42,26 @@ const FloatingMenu = () => {
 
   return (
     <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 sm:bottom-4">
+      {/* Outer glow */}
       <div
-        className={`flex items-center gap-1 p-1.5 rounded-full border backdrop-blur-lg shadow-lg transition-colors duration-300 sm:gap-2 sm:p-2 ${
+        className={`absolute inset-0 rounded-full blur-xl opacity-40 ${
           isLight
-            ? "border-slate-300 bg-white/70 shadow-slate-300/50"
-            : "border-slate-700 bg-slate-800/60 shadow-black/30"
+            ? "bg-gradient-to-r from-slate-300 via-white to-slate-300"
+            : "bg-gradient-to-r from-slate-600 via-slate-400 to-slate-600"
         }`}
+      />
+      {/* Main container */}
+      <div
+        className={`relative flex items-center gap-1 p-1.5 rounded-full backdrop-blur-2xl transition-all duration-300 sm:gap-2 sm:p-2 ${
+          isLight
+            ? "bg-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(0,0,0,0.05)] border border-white/60"
+            : "bg-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(0,0,0,0.2)] border border-white/20"
+        }`}
+        style={{
+          background: isLight
+            ? "linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.5) 100%)"
+            : "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)",
+        }}
       >
         {sections.map(({ id, icon: Icon, label }) => {
           const isActive = activeSection === id;
@@ -55,14 +69,14 @@ const FloatingMenu = () => {
             <button
               key={id}
               onClick={() => scrollToSection(id)}
-              className={`p-2 rounded-full transition-all duration-300 sm:p-3 ${
+              className={`relative p-2 rounded-full transition-all duration-300 sm:p-3 ${
                 isActive
                   ? isLight
-                    ? "bg-slate-700 text-white shadow-md"
-                    : "bg-slate-100 text-slate-900 shadow-md"
+                    ? "bg-slate-800/80 text-white shadow-lg backdrop-blur-sm"
+                    : "bg-white/90 text-slate-900 shadow-lg"
                   : isLight
-                    ? "text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-                    : "text-slate-300 hover:bg-slate-700 hover:text-white"
+                    ? "text-slate-700 hover:bg-white/50 hover:text-slate-900"
+                    : "text-white/80 hover:bg-white/10 hover:text-white"
               }`}
               aria-label={label}
             >
