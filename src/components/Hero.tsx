@@ -12,7 +12,7 @@ const Hero = () => {
     : "https://drive.google.com/file/d/1m2Ssn-kb88Lh8y6es0fEudiilhfhUVOT/view?usp=sharing";
 
   return (
-    <section className="w-full min-h-[90vh] flex items-center justify-center px-6 py-20">
+    <section id="hero" className="w-full min-h-[90vh] flex items-center justify-center px-6 py-8 lg:py-12 pb-[calc(2rem+env(safe-area-inset-bottom))] lg:pb-[calc(3rem+env(safe-area-inset-bottom))]">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
           <div className="flex-1 text-center lg:text-left">

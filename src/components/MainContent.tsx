@@ -10,18 +10,10 @@ const MainContent = () => {
     <div className="w-full">
       <Header />
       <main className="w-full">
-        <div id="hero">
-          <Hero />
-        </div>
-        <div id="about">
-          <AboutContainer />
-        </div>
-        <div id="technologies">
-          <TechnologiesContainer />
-        </div>
-        <div id="projects">
-          <ProjectsContainer />
-        </div>
+        <Hero />
+        <AboutContainer />
+        <TechnologiesContainer />
+        <ProjectsContainer />
       </main>
       <Footer />
     </div>

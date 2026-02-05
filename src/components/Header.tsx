@@ -19,7 +19,7 @@ const Header = () => {
       setTimeout(() => {
         setIsMenuOpen(false);
         setIsClosing(false);
-      }, 300);
+      }, 250);
     } else {
       setIsMenuOpen(true);
     }

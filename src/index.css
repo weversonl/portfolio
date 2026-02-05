@@ -9,65 +9,124 @@
   }
 }
 
-/* Page Load Animation */
+/* ===== PERFORMANCE & ACCESSIBILITY ===== */
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .page-load-animation {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .scroll-animate,
+  .scroll-animate-fast {
+    transform: none !important;
+  }
+
+  .glass-card-hover:hover,
+  .glass-btn:hover,
+  .btn:hover {
+    transform: none !important;
+  }
+}
+
+/* Reduce visual complexity on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .glass-card,
+  .glass-btn,
+  header,
+  footer {
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+
+  .glass-card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .light .glass-card {
+    box-shadow: 0 4px 20px rgba(51, 65, 85, 0.08) !important;
+  }
+
+  .avatar-ring {
+    box-shadow: 0 0 30px rgba(148, 163, 184, 0.2) !important;
+  }
+
+  .light .avatar-ring {
+    box-shadow: 0 0 30px rgba(71, 85, 105, 0.1) !important;
+  }
+}
+
+/* iOS-style easing curves */
+/* --ease-out-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94) - quart */
+/* --ease-out-elegant: cubic-bezier(0.33, 1, 0.68, 1) - cubic */
+/* --ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1) - with overshoot */
+
+/* Page Load Animation - GPU accelerated */
 @keyframes pageLoad {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 24px, 0);
   }
-
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 .page-load-animation {
-  animation: pageLoad 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: pageLoad 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  will-change: transform, opacity;
 }
 
-/* Mobile Menu Animations */
-@keyframes slideDownFade {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-    max-height: 0;
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 300px;
-  }
-}
-
-@keyframes slideUpFade {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-    max-height: 300px;
-  }
-
-  to {
-    opacity: 0;
-    transform: translateY(-10px);
-    max-height: 0;
-  }
-}
-
+/* Mobile Menu Animations - GPU accelerated, iOS-style */
 .mobile-menu-enter {
-  animation: slideDownFade 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  overflow: hidden;
+  animation: menuEnter 0.35s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  transform-origin: top center;
+  will-change: transform, opacity;
 }
 
 .mobile-menu-exit {
-  animation: slideUpFade 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  overflow: hidden;
+  animation: menuExit 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: top center;
+  will-change: transform, opacity;
 }
 
-/* Hamburger Icon Animation */
+@keyframes menuEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0) scaleY(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+}
+
+@keyframes menuExit {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0) scaleY(0.92);
+  }
+}
+
+/* Hamburger Icon Animation - GPU accelerated */
 .hamburger-icon {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform;
 }
 
 .hamburger-icon.open {
@@ -127,15 +186,17 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    transition: background-color 0.5s ease, color 0.5s ease;
   }
 
   html {
     scroll-behavior: smooth;
     /* Fix mobile viewport height issues */
     min-height: 100%;
+    min-height: -webkit-fill-available;
     min-height: 100dvh;
     background: #0f172a; /* slate-900 fallback for dark theme */
+    /* Prevent rubber-band scrolling showing wrong colors */
+    overscroll-behavior-y: none;
   }
 
   html.light {
@@ -144,57 +205,51 @@
 
   body {
     min-height: 100%;
+    min-height: -webkit-fill-available;
     min-height: 100dvh;
-    /* Prevent overscroll bounce showing background */
-    overscroll-behavior: none;
+    /* Prevent overscroll bounce */
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* Smooth transitions for all theme changes */
-  *,
-  *::before,
-  *::after {
-    transition-property: background-color, border-color, color, fill, stroke, box-shadow;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
+  /* Ensure #root covers full viewport with solid background */
+  #root {
+    min-height: 100%;
+    min-height: -webkit-fill-available;
+    min-height: 100dvh;
+    background: inherit;
+  }
+
+  /* Smooth transitions for theme changes - iOS-style */
+  body,
+  header,
+  footer,
+  .glass-card,
+  .glass-section {
+    transition: background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a {
+    transition: color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  svg {
+    transition: fill 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                stroke 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }
 
 @layer components {
   /* ===== LIQUID GLASS DESIGN SYSTEM ===== */
 
-  /* Background gradients */
+  /* Solid backgrounds - gradients removed to prevent mobile scroll artifacts */
   body {
-    @apply bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950;
-    background-attachment: fixed;
-    background-color: #0f172a; /* slate-900 solid fallback */
+    background: #0f172a; /* slate-900 */
   }
 
   .light body {
-    background: linear-gradient(135deg, #f1f5f9 0%, #f8fafc 25%, #ffffff 50%, #f8fafc 75%, #f1f5f9 100%);
-    background-attachment: fixed;
-    background-color: #f8fafc; /* slate-50 solid fallback */
-  }
-
-  /* Ambient background blobs for depth */
-  body::before {
-    content: '';
-    position: fixed;
-    top: -100%;
-    left: -50%;
-    width: 200%;
-    height: 400%;
-    background: radial-gradient(ellipse at 15% 15%, rgba(71, 85, 105, 0.12) 0%, transparent 45%),
-                radial-gradient(ellipse at 85% 85%, rgba(51, 65, 85, 0.1) 0%, transparent 45%),
-                radial-gradient(ellipse at 50% 50%, rgba(30, 41, 59, 0.08) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .light body::before {
-    background: radial-gradient(ellipse at 10% 10%, rgba(71, 85, 105, 0.08) 0%, transparent 40%),
-                radial-gradient(ellipse at 90% 20%, rgba(51, 65, 85, 0.06) 0%, transparent 40%),
-                radial-gradient(ellipse at 80% 80%, rgba(71, 85, 105, 0.08) 0%, transparent 40%),
-                radial-gradient(ellipse at 20% 90%, rgba(51, 65, 85, 0.05) 0%, transparent 40%);
+    background: #f8fafc; /* slate-50 */
   }
 
   /* ===== GLASS CARD STYLES ===== */
@@ -225,7 +280,10 @@
   }
 
   .glass-card-hover {
-    @apply transition-all duration-300;
+    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1),
+                box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                border-color 0.3s ease-out;
+    will-change: transform;
   }
 
   .glass-card-hover:hover {
@@ -234,7 +292,7 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
       inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    transform: translate3d(0, -2px, 0);
   }
 
   .light .glass-card-hover:hover {
@@ -248,7 +306,7 @@
 
   /* ===== GLASS BUTTON STYLES ===== */
   .glass-btn {
-    @apply relative rounded-xl backdrop-blur-lg px-4 py-2 transition-all duration-300;
+    @apply relative rounded-xl backdrop-blur-lg px-4 py-2;
     background: linear-gradient(135deg,
       rgba(255, 255, 255, 0.12) 0%,
       rgba(255, 255, 255, 0.06) 100%);
@@ -256,6 +314,10 @@
       0 4px 16px rgba(0, 0, 0, 0.15),
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1),
+                background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
   }
 
   .light .glass-btn {
@@ -277,7 +339,7 @@
       0 6px 20px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
+    transform: translate3d(0, -1px, 0);
   }
 
   .light .glass-btn:hover {
@@ -289,6 +351,10 @@
       0 4px 12px rgba(0, 0, 0, 0.05),
       inset 0 1px 0 rgba(255, 255, 255, 1);
     border-color: rgba(255, 255, 255, 1);
+  }
+
+  .glass-btn:active {
+    transform: translate3d(0, 0, 0);
   }
 
   /* ===== HEADER STYLES ===== */
@@ -360,17 +426,11 @@
   /* ===== SECTION STYLES ===== */
   .glass-section {
     @apply relative;
-    background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.03) 0%,
-      rgba(255, 255, 255, 0.01) 100%);
+    /* Removed semi-transparent backgrounds to prevent scroll artifacts */
   }
 
   .light .glass-section {
-    background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.6) 0%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0.5) 100%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    /* Kept minimal for clean scrolling */
   }
 
   /* ===== TEXT COLORS ===== */
@@ -430,7 +490,7 @@
 
   /* ===== MAIN BUTTON ===== */
   .btn {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold transition-all duration-300 cursor-pointer backdrop-blur-lg;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-2xl font-semibold cursor-pointer backdrop-blur-lg;
     background: linear-gradient(135deg,
       rgba(255, 255, 255, 0.2) 0%,
       rgba(255, 255, 255, 0.1) 100%);
@@ -440,6 +500,10 @@
       inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: white;
+    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1),
+                background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
   }
 
   .light .btn {
@@ -463,7 +527,7 @@
       0 12px 40px rgba(0, 0, 0, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.3),
       inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    transform: translate3d(0, -2px, 0);
   }
 
   .light .btn:hover {
@@ -478,7 +542,7 @@
   }
 
   .btn:active {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 
   /* ===== SOCIAL BUTTONS ===== */
@@ -541,27 +605,33 @@
     background: linear-gradient(90deg, rgba(71, 85, 105, 0.3) 0%, transparent 100%);
   }
 
-  /* ===== SCROLL ANIMATIONS ===== */
+  /* ===== SCROLL ANIMATIONS - iOS-style ===== */
   .scroll-animate {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translate3d(0, 40px, 0);
+    transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+                transform 0.7s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform, opacity;
   }
 
   .scroll-animate.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
   }
 
   .scroll-animate-fast {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transform: translate3d(0, 24px, 0);
+    transition: opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1),
+                transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform, opacity;
   }
 
   .scroll-animate-fast.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
   }
 
   /* ===== AVATAR RING GLOW ===== */

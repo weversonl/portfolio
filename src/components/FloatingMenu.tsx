@@ -52,7 +52,7 @@ const FloatingMenu = () => {
       />
       {/* Main container */}
       <div
-        className={`relative flex items-center gap-1 p-1.5 rounded-full backdrop-blur-2xl transition-all duration-300 sm:gap-2 sm:p-2 ${
+        className={`relative flex items-center gap-1 p-1.5 rounded-full backdrop-blur-xl sm:gap-2 sm:p-2 ${
           isLight
             ? "shadow-[0_8px_32px_rgba(51,65,85,0.1),inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(51,65,85,0.05)] border border-white/90"
             : "shadow-[0_8px_32px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(0,0,0,0.2)] border border-white/20"
@@ -69,7 +69,7 @@ const FloatingMenu = () => {
             <button
               key={id}
               onClick={() => scrollToSection(id)}
-              className={`relative p-2 rounded-full transition-all duration-300 sm:p-3 ${
+              className={`relative p-2 rounded-full transition-colors duration-150 ease-out sm:p-3 ${
                 isActive
                   ? isLight
                     ? "bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow-lg shadow-slate-500/20"

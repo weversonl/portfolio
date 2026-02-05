@@ -9,11 +9,11 @@ const ProjectsContainer = () => {
     <section
       ref={ref as React.RefObject<HTMLElement>}
       id="projects"
-      className={`w-full px-6 py-20 lg:py-32 flex justify-center glass-section scroll-animate ${
+      className={`w-full px-6 py-8 lg:py-16 flex justify-center glass-section scroll-animate ${
         isVisible ? "visible" : ""
       }`}
     >
-      <div className="container max-w-6xl">
+      <div className="container max-w-6xl text-center lg:text-left">
         <h2 className="section-title">{t("projects.title")}</h2>
         <p className="content-text mb-10 leading-relaxed text-lg">
           {t("projects.text")}
@@ -22,7 +22,7 @@ const ProjectsContainer = () => {
           href="https://github.com/weversonl"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn"
+          className="btn inline-block"
         >
           {t("projects.button")}
         </a>

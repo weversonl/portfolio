@@ -52,7 +52,7 @@ const TechnologiesContainer = () => {
     <section
       ref={ref as RefObject<HTMLElement>}
       id="technologies"
-      className={`w-full px-6 py-20 lg:py-32 flex justify-center scroll-animate ${
+      className={`w-full px-6 py-8 lg:py-16 flex justify-center scroll-animate ${
         isVisible ? "visible" : ""
       }`}
     >
@@ -65,7 +65,7 @@ const TechnologiesContainer = () => {
               className="tech-card group"
             >
               <div className="flex gap-6">
-                <div className="tech-card-icon text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="tech-card-icon text-5xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300" style={{ transitionTimingFunction: 'cubic-bezier(0.33, 1, 0.68, 1)' }}>
                   {tech.icon}
                 </div>
                 <div className="flex-1">

@@ -35,6 +35,16 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.classList.toggle("light", newTheme === "light");
+
+    // Update meta theme-color for mobile browsers
+    const themeColor = newTheme === "dark" ? "#0f172a" : "#f8fafc";
+    document
+      .querySelector('meta[name="theme-color"]:not([media])')
+      ?.setAttribute("content", themeColor);
+    // Also update the media-specific ones to match current theme
+    document
+      .querySelectorAll('meta[name="theme-color"]')
+      .forEach((meta) => meta.setAttribute("content", themeColor));
   };
 
   const value = useMemo(() => ({ theme, toggleTheme }), [theme]);
