@@ -85,7 +85,6 @@
 
 .page-load-animation {
   animation: pageLoad 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
-  will-change: transform, opacity;
 }
 
 /* Mobile Menu Dropdown - floating glass style */
@@ -116,13 +115,11 @@
 .mobile-menu-enter {
   animation: menuEnter 0.35s cubic-bezier(0.33, 1, 0.68, 1) forwards;
   transform-origin: top center;
-  will-change: transform, opacity;
 }
 
 .mobile-menu-exit {
   animation: menuExit 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   transform-origin: top center;
-  will-change: transform, opacity;
 }
 
 @keyframes menuEnter {
@@ -333,7 +330,6 @@
     transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1),
                 box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 border-color 0.3s ease-out;
-    will-change: transform;
   }
 
   .glass-card-hover:hover {
@@ -367,7 +363,6 @@
     transition: transform 0.25s cubic-bezier(0.33, 1, 0.68, 1),
                 background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 box-shadow 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
   }
 
   .light .glass-btn {
@@ -553,7 +548,6 @@
     transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1),
                 background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    will-change: transform;
   }
 
   .light .btn {
@@ -678,13 +672,11 @@
     transform: translate3d(0, 40px, 0);
     transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
                 transform 0.7s cubic-bezier(0.33, 1, 0.68, 1);
-    will-change: transform, opacity;
   }
 
   .scroll-animate.visible {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    will-change: auto;
   }
 
   .scroll-animate-fast {
@@ -692,13 +684,11 @@
     transform: translate3d(0, 24px, 0);
     transition: opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1),
                 transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
-    will-change: transform, opacity;
   }
 
   .scroll-animate-fast.visible {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    will-change: auto;
   }
 
   /* ===== AVATAR RING GLOW ===== */

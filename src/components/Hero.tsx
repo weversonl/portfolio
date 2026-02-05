@@ -1,7 +1,7 @@
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
 
-import Avatar from "../assets/img/eu.png";
+import Avatar from "../assets/img/eu.webp";
 
 const Hero = () => {
   const { t, language } = useLanguage();
@@ -62,6 +62,11 @@ const Hero = () => {
             <img
               src={Avatar}
               alt="Weverson Lemos"
+              // @ts-expect-error React 18 doesn't type fetchPriority yet
+              fetchpriority="high"
+              decoding="async"
+              width={384}
+              height={384}
               className={`relative w-72 h-72 lg:w-96 lg:h-96 rounded-full object-cover avatar-ring ${
                 theme === "light" ? "ring-slate-300/50" : "ring-white/20"
               }`}

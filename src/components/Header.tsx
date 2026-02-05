@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { useLanguage } from "../contexts/LanguageContext";
-import Avatar from "../assets/img/eu.png";
+import Avatar from "../assets/img/eu.webp";
 
 import SocialNetworkContainer from "./SocialNetworkContainer";
 import ThemeToggle from "./ThemeToggle";
@@ -32,6 +32,10 @@ const Header = () => {
             <img
               src={Avatar}
               alt="Weverson Lemos"
+              // @ts-expect-error React 18 doesn't type fetchPriority yet
+              fetchpriority="high"
+              width={48}
+              height={48}
               className="w-12 h-12 rounded-full object-cover ring-2 ring-white/20 shadow-lg"
             />
             <div>
