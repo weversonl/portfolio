@@ -123,18 +123,44 @@
   }
 }
 
-/* Hamburger Icon Animation - GPU accelerated */
-.hamburger-icon {
-  transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
-  will-change: transform;
+/* Hamburger Icon Animation - iOS-style */
+.hamburger-lines {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.hamburger-icon.open {
-  transform: rotate(90deg);
+.hamburger-lines span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.35s cubic-bezier(0.33, 1, 0.68, 1),
+              opacity 0.25s cubic-bezier(0.33, 1, 0.68, 1),
+              width 0.35s cubic-bezier(0.33, 1, 0.68, 1);
+  transform-origin: center;
 }
 
-.hamburger-icon.close {
-  transform: rotate(-90deg);
+.hamburger-lines span:nth-child(2) {
+  width: 70%;
+  margin-left: auto;
+}
+
+.hamburger-lines.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger-lines.open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger-lines.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 @layer base {
@@ -194,7 +220,7 @@
     min-height: 100%;
     min-height: -webkit-fill-available;
     min-height: 100dvh;
-    background: #0f172a; /* slate-900 fallback for dark theme */
+    background: #090f21;
     /* Prevent rubber-band scrolling showing wrong colors */
     overscroll-behavior-y: none;
   }
@@ -245,7 +271,7 @@
 
   /* Solid backgrounds - gradients removed to prevent mobile scroll artifacts */
   body {
-    background: #0f172a; /* slate-900 */
+    background: #090f21;
   }
 
   .light body {
@@ -361,8 +387,8 @@
   header {
     @apply backdrop-blur-2xl;
     background: linear-gradient(180deg,
-      rgba(15, 23, 42, 0.8) 0%,
-      rgba(15, 23, 42, 0.6) 100%);
+      rgba(9, 15, 33, 0.8) 0%,
+      rgba(9, 15, 33, 0.6) 100%);
     box-shadow:
       0 4px 30px rgba(0, 0, 0, 0.15),
       inset 0 -1px 0 rgba(255, 255, 255, 0.05);
@@ -564,25 +590,42 @@
 
   /* ===== LANGUAGE TOGGLE ===== */
   .language-btn {
-    @apply glass-btn p-2 text-slate-300;
+    @apply glass-btn p-2 text-slate-400;
+    opacity: 0.7;
+    transition: opacity 0.25s cubic-bezier(0.33, 1, 0.68, 1),
+                transform 0.25s cubic-bezier(0.33, 1, 0.68, 1),
+                background 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .language-btn:hover {
+    opacity: 1;
   }
 
   .language-btn.active {
+    opacity: 1;
     background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.12) 100%);
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.15) 100%);
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.15);
     @apply text-white;
   }
 
   .light .language-btn {
-    @apply text-slate-700;
+    @apply text-slate-500;
   }
 
   .light .language-btn.active {
+    opacity: 1;
     background: linear-gradient(135deg,
       #334155 0%,
       #475569 100%);
-    box-shadow: 0 4px 16px rgba(51, 65, 85, 0.2);
+    box-shadow:
+      0 4px 16px rgba(51, 65, 85, 0.25),
+      0 0 0 1px rgba(51, 65, 85, 0.1);
     @apply text-white;
   }
 
@@ -653,8 +696,8 @@
   footer {
     @apply backdrop-blur-xl;
     background: linear-gradient(180deg,
-      rgba(15, 23, 42, 0.4) 0%,
-      rgba(15, 23, 42, 0.6) 100%);
+      rgba(9, 15, 33, 0.4) 0%,
+      rgba(9, 15, 33, 0.6) 100%);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 

@@ -16,6 +16,13 @@ const FloatingMenu = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+
+      // If at bottom of page, activate last section
+      if (isAtBottom) {
+        setActiveSection(sections[sections.length - 1].id);
+        return;
+      }
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const element = document.getElementById(sections[i].id);

@@ -37,7 +37,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     document.documentElement.classList.toggle("light", newTheme === "light");
 
     // Update meta theme-color for mobile browsers
-    const themeColor = newTheme === "dark" ? "#0f172a" : "#f8fafc";
+    const themeColor = newTheme === "dark" ? "#090f21" : "#f8fafc";
     document
       .querySelector('meta[name="theme-color"]:not([media])')
       ?.setAttribute("content", themeColor);

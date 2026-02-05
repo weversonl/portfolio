@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
 
 import { useLanguage } from "../contexts/LanguageContext";
 import Avatar from "../assets/img/eu.png";
@@ -53,18 +52,14 @@ const Header = () => {
           {/* Mobile hamburger button */}
           <button
             onClick={toggleMenu}
-            className="sm:hidden glass-btn p-2"
+            className="sm:hidden glass-btn p-3"
             aria-label="Menu"
           >
-            {isMenuOpen ? (
-              <HiX
-                className={`text-2xl hamburger-icon ${
-                  isClosing ? "close" : "open"
-                }`}
-              />
-            ) : (
-              <HiMenu className="text-2xl hamburger-icon" />
-            )}
+            <div className={`hamburger-lines ${isMenuOpen && !isClosing ? "open" : ""}`}>
+              <span />
+              <span />
+              <span />
+            </div>
           </button>
         </div>
 
