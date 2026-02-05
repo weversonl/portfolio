@@ -41,7 +41,7 @@ const FloatingMenu = () => {
   const isLight = theme === "light";
 
   return (
-    <div className="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 sm:bottom-4">
+    <div className="fixed left-1/2 -translate-x-1/2 z-50 bottom-[calc(0.75rem+env(safe-area-inset-bottom))] sm:bottom-[calc(1rem+env(safe-area-inset-bottom))]">
       {/* Outer glow */}
       <div
         className={`absolute inset-0 rounded-full blur-xl opacity-40 ${
