@@ -1,6 +1,5 @@
 import { useLanguage } from "../contexts/LanguageContext";
 import { useTheme } from "../contexts/ThemeContext";
-
 import Avatar from "../assets/img/eu.webp";
 
 const Hero = () => {
@@ -62,8 +61,6 @@ const Hero = () => {
             <img
               src={Avatar}
               alt="Weverson Lemos"
-              // @ts-expect-error React 18 doesn't type fetchPriority yet
-              fetchpriority="high"
               decoding="async"
               width={384}
               height={384}
